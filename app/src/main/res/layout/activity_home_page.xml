@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/surveys_completed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Surveys completed today: " />
+
+    <TextView
+        android:id="@+id/next_survey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next survey in: " />
+
+    <TextView
+        android:id="@+id/pending_surveys"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pending Surveys: " />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/survey_buttons"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!-- Buttons will be dynamically added here based on the selected date -->
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
