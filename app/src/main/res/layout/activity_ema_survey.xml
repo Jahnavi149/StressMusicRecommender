@@ -6,20 +6,119 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="16dp">
 
-        <!-- Add your survey questions as per the final screenshot -->
-        <!-- Example Question -->
+        <!-- Question about current feeling -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="What was your activity at 11:00 AM?" />
+            android:text="1. Using the grid below, how are you feeling right now?"
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp" />
 
-        <EditText
+        <!-- Grid to select emotions -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp">
+            <ImageView
+                android:id="@+id/emotionGrid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/emotion_grid_high_res"
+                android:scaleType="fitCenter" />
+        </FrameLayout>
+
+        <!-- Displays selected emotion -->
+        <TextView
+            android:id="@+id/labelSelectedEmotion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selected Emotion:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/selectedEmotion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="None"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FF0000" />
+
+        <!-- Additional questions about feeling cause -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Was the feeling mostly because... (select one only)"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp" />
+
+        <Spinner
+            android:id="@+id/reasonSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="activity" />
+            android:entries="@array/reason_array" />
 
-        <!-- Add other questions similarly -->
+        <!-- Question about music listening -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Are you listening to music?"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp" />
+
+        <RadioGroup
+            android:id="@+id/musicRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            <RadioButton
+                android:id="@+id/radioNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No" />
+            <RadioButton
+                android:id="@+id/radioYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
+        </RadioGroup>
+
+        <!-- Sub-questions about music effects -->
+        <TextView
+            android:id="@+id/questionIfYes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(a) How much did the music help you take your focus away from the task?"
+            android:textSize="16sp"
+            android:visibility="gone"
+            android:layout_marginTop="16dp" />
+
+        <SeekBar
+            android:id="@+id/seekBarFocusAway"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="10"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/questionDwellOn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(b) How much did the music help you focus on the task so you could dwell on it?"
+            android:textSize="16sp"
+            android:visibility="gone"
+            android:layout_marginTop="16dp" />
+
+        <SeekBar
+            android:id="@+id/seekBarDwellOn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="10"
+            android:visibility="gone" />
     </LinearLayout>
 </ScrollView>
